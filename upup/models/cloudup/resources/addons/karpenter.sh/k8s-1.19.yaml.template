@@ -1062,6 +1062,17 @@ spec:
                 - linux
               - key: karpenter.sh/provisioner-name
                 operator: DoesNotExist
+              - key: node-role.kubernetes.io/control-plane
+                operator: Exists
+            - matchExpressions:
+              - key: kubernetes.io/os
+                operator: In
+                values:
+                - linux
+              - key: karpenter.sh/provisioner-name
+                operator: DoesNotExist
+              - key: node-role.kubernetes.io/master
+                operator: Exists
       tolerations:
       - key: node-role.kubernetes.io/master
         operator: Exists
