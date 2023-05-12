@@ -696,7 +696,7 @@ data:
   "batchMaxDuration": "10s"
   "batchIdleDuration": "1s"
   "aws.clusterName": "{{ ClusterName }}"
-  "aws.clusterEndpoint": "https://{{ APIInternalName }}"
+  "aws.clusterEndpoint": "https://{{ .MasterInternalName }}"
   "featureGates.driftEnabled": "false"
   {{ if not .Networking.AmazonVPC }}
   "aws.enableENILimitedPodDensity": "true"
