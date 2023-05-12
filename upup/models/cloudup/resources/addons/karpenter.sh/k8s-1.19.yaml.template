@@ -696,7 +696,7 @@ data:
   "batchMaxDuration": "10s"
   "batchIdleDuration": "1s"
   "aws.clusterName": "{{ ClusterName }}"
-  "aws.clusterEndpoint": "https://{{ .MasterInternalName }}"
+  "aws.clusterEndpoint": "https://{{ APIInternalName }}"
   "featureGates.driftEnabled": "false"
   {{ if not .Networking.AmazonVPC }}
   "aws.enableENILimitedPodDensity": "true"
@@ -999,7 +999,7 @@ spec:
       dnsPolicy: Default
       containers:
         - name: controller
-          image: public.ecr.aws/karpenter/controller:v0.27.2@sha256:435bed2544df57f65ed247b22202d48845b7f63e1fd7cf2a1cdf61250687fd0c
+          image: public.ecr.aws/karpenter/controller:v0.27.3@sha256:87ea68abc00b806e45df8a519eacf845f5f0fa577596edc3be83fad6e550aefb
           imagePullPolicy: IfNotPresent
           resources:
             limits:
@@ -1030,7 +1030,7 @@ spec:
               port: http
           env:
             - name: KUBERNETES_MIN_VERSION
-              value: "1.23.2"
+              value: "1.19.0-0"
             - name: KARPENTER_SERVICE
               value: karpenter
             - name: WEBHOOK_PORT
