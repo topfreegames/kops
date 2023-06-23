@@ -1419,7 +1419,7 @@ spec:
               memory: 1Gi
           ports:
             - name: http-metrics
-              containerPort: 8080
+              containerPort: 8000
               protocol: TCP
             - name: http
               containerPort: 8081
@@ -1446,7 +1446,7 @@ spec:
             - name: WEBHOOK_PORT
               value: "8443"
             - name: METRICS_PORT
-              value: "8080"
+              value: "8000"
             - name: HEALTH_PROBE_PORT
               value: "8081"
             - name: AWS_REGION
