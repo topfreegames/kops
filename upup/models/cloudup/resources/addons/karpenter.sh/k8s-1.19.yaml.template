@@ -1112,11 +1112,7 @@ data:
   "aws.clusterName": "{{ ClusterName }}"
   "aws.clusterEndpoint": "https://{{ .MasterInternalName }}"
   "featureGates.driftEnabled": "false"
-  {{ if not .Networking.AmazonVPC }}
-  "aws.enableENILimitedPodDensity": "true"
-  {{ else }}
   "aws.enableENILimitedPodDensity": "false"
-  {{ end }}
   "aws.enablePodENI": "false"
   "aws.interruptionQueueName": ""
   "aws.isolatedVPC": "false"
